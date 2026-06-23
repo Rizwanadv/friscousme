@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Frisco · An American Brand, Now in the Middle East</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0B1F3A;--red:#C8252A;--white:#FAFAF8;--cream:#F4EFE3;--gold:#C49A2A;--slate:#6B7B8D;--light:#EDF2F7;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;width:100%;z-index:200;background:rgba(250,250,248,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,31,58,0.1);padding:1rem 3.5rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.05em;color:var(--navy)}
+.logo span{color:var(--red)}
+.logo-sub{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--slate);font-family:'DM Sans',sans-serif;display:block;margin-top:-4px}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+.us-flag{font-size:1rem;background:var(--light);padding:0.3rem 0.8rem;border-radius:2rem;font-size:0.75rem;letter-spacing:0.08em;color:var(--navy);font-weight:500}
+.nav-cta{background:var(--red);color:#fff;padding:0.55rem 1.4rem;border-radius:2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;border:none;cursor:pointer;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.88}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;padding-top:72px;position:relative;overflow:hidden}
+.hero-l{background:var(--navy);padding:5rem 4rem 5rem 3.5rem;display:flex;flex-direction:column;justify-content:center;position:relative}
+.origin-chip{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:2rem;padding:0.45rem 1rem;margin-bottom:2.2rem;width:fit-content}
+.origin-chip .flag{font-size:1rem}
+.origin-chip span{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);font-weight:500}
+.origin-chip .arr{color:rgba(255,255,255,0.4);font-size:0.8rem}
+.origin-chip .dest{color:var(--gold)}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:5.8rem;line-height:0.95;letter-spacing:0.02em;color:#fff;margin-bottom:1.8rem}
+.hero-h1 .accent{color:var(--gold)}
+.hero-h1 .red{color:var(--red)}
+.hero-body{font-size:1rem;line-height:1.85;color:rgba(255,255,255,0.62);max-width:400px;margin-bottom:2.5rem;font-weight:300}
+.hero-body strong{color:rgba(255,255,255,0.9);font-weight:500}
+.hero-btns{display:flex;gap:1.2rem;align-items:center}
+.btn-w{background:#fff;color:var(--navy);padding:0.85rem 2rem;border-radius:2rem;font-size:0.85rem;font-weight:500;border:none;cursor:pointer;letter-spacing:0.04em;transition:opacity 0.2s}
+.btn-w:hover{opacity:0.88}
+.btn-ghost{color:rgba(255,255,255,0.65);font-size:0.85rem;font-weight:400;letter-spacing:0.06em;cursor:pointer;display:flex;align-items:center;gap:0.4rem;background:none;border:none;transition:color 0.2s}
+.btn-ghost:hover{color:#fff}
+.btn-ghost::after{content:'→';transition:transform 0.2s}
+.btn-ghost:hover::after{transform:translateX(4px)}
+.hero-stats{margin-top:3.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.1);display:flex;gap:3rem}
+.hs-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:0.04em;color:#fff}
+.hs-lbl{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:-4px}
+
+.hero-r{background:var(--cream);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-r-top{flex:1;display:flex;align-items:center;justify-content:center;padding:3rem 2rem 1rem;position:relative}
+.journey-vis{width:100%;text-align:center;position:relative}
+.jv-line{width:80%;height:2px;background:linear-gradient(90deg,#C8252A,#C49A2A);margin:0 auto;position:relative;border-radius:2px}
+.jv-dot{position:absolute;top:50%;transform:translateY(-50%);width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px currentColor}
+.jv-dot.us{left:-7px;background:var(--red);color:var(--red)}
+.jv-dot.me{right:-7px;background:var(--gold);color:var(--gold)}
+.jv-label{position:absolute;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;white-space:nowrap;top:18px}
+.jv-label.us{left:-7px;color:var(--red)}
+.jv-label.me{right:-7px;color:var(--gold)}
+.jv-plane{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:1.6rem}
+.hero-r-cards{padding:1.5rem 2rem 2.5rem;display:flex;flex-direction:column;gap:0.8rem}
+.proof-card{background:#fff;border-radius:0.8rem;padding:1rem 1.2rem;display:flex;align-items:center;gap:1rem;border:1px solid rgba(11,31,58,0.08)}
+.pc-icon{width:40px;height:40px;border-radius:0.6rem;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.pc-icon.blue{background:#E8F0FB}
+.pc-icon.red{background:#FBE8E8}
+.pc-icon.gold{background:#FBF5E8}
+.pc-title{font-size:0.85rem;font-weight:500;color:var(--navy)}
+.pc-sub{font-size:0.75rem;color:var(--slate);margin-top:2px}
+
+/* TICKER */
+.ticker{background:var(--red);padding:0.85rem 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-flex;gap:3rem;animation:ticker 20s linear infinite}
+.ti-item{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:0.15em;color:#fff;display:inline-flex;align-items:center;gap:1.5rem}
+.ti-item::after{content:'★';font-size:0.55rem;color:rgba(255,255,255,0.5)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* AMERICAN STORY */
+.american{padding:6rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.am-tag{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);font-weight:500;margin-bottom:0.8rem}
+.am-h2{font-family:'Bebas Neue',sans-serif;font-size:3.4rem;letter-spacing:0.03em;color:var(--navy);line-height:1;margin-bottom:1.2rem}
+.am-body{font-size:0.95rem;line-height:1.9;color:var(--slate);font-weight:300;margin-bottom:2rem}
+.am-body strong{color:var(--navy);font-weight:500}
+.am-timeline{display:flex;flex-direction:column;gap:0}
+.atl-item{display:flex;gap:1.5rem;position:relative;padding-bottom:1.8rem}
+.atl-item:last-child{padding-bottom:0}
+.atl-item:not(:last-child)::before{content:'';position:absolute;left:19px;top:40px;bottom:0;width:1px;background:linear-gradient(180deg,var(--navy),transparent)}
+.atl-dot{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.05em}
+.atl-dot.gold{background:var(--gold)}
+.atl-year{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);margin-bottom:0.2rem}
+.atl-text{font-size:0.88rem;line-height:1.7;color:var(--navy)}
+
+.am-right{position:relative}
+.am-big-card{background:var(--navy);border-radius:1.2rem;padding:2.5rem;color:#fff;margin-bottom:1rem}
+.abc-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1rem}
+.abc-quote{font-family:'Libre Baskerville',serif;font-size:1.25rem;font-style:italic;line-height:1.65;color:#fff;margin-bottom:1.5rem}
+.abc-author{font-size:0.78rem;color:rgba(255,255,255,0.5);letter-spacing:0.05em}
+.abc-flag{font-size:1.5rem;margin-bottom:0.8rem}
+.am-small-cards{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+.asc{background:var(--light);border-radius:0.8rem;padding:1.2rem;text-align:center}
+.asc-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy)}
+.asc-lbl{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);margin-top:2px}
+
+/* PRODUCTS */
+.products{background:var(--cream);padding:6rem 3.5rem}
+.prod-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem}
+.prod-tabs{display:flex;gap:0.5rem}
+.ptab{background:none;border:1px solid rgba(11,31,58,0.15);padding:0.5rem 1.2rem;border-radius:2rem;font-size:0.78rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--slate);cursor:pointer;transition:all 0.2s}
+.ptab.active,.ptab:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.pcard{background:#fff;border-radius:1rem;overflow:hidden;transition:transform 0.22s}
+.pcard:hover{transform:translateY(-5px)}
+.pc-visual{height:160px;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.pc-vis-blue{background:#E8F0FB}
+.pc-vis-cream{background:var(--cream)}
+.pc-vis-sand{background:#F0EBE0}
+.pc-info{padding:1.3rem}
+.pci-tag{display:inline-block;background:var(--light);color:var(--slate);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:2rem;margin-bottom:0.6rem;font-weight:500}
+.pci-name{font-family:'Libre Baskerville',serif;font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.35rem}
+.pci-desc{font-size:0.78rem;color:var(--slate);line-height:1.6}
+.pci-origin{margin-top:0.8rem;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);font-weight:500;display:flex;align-items:center;gap:0.3rem}
+
+/* EXPANSION */
+.expansion{padding:6rem 3.5rem;text-align:center}
+.exp-h2{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;letter-spacing:0.03em;color:var(--navy);margin-bottom:0.6rem}
+.exp-body{font-size:0.95rem;color:var(--slate);max-width:480px;margin:0 auto 3.5rem;line-height:1.8;font-weight:300}
+.me-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem}
+.me-card{border-radius:1rem;padding:1.8rem 1.2rem;text-align:center;border:1px solid rgba(11,31,58,0.1);transition:all 0.2s;position:relative;overflow:hidden;cursor:default}
+.me-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.me-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.me-card.uae::before{background:linear-gradient(90deg,#00732F,#fff,#FF0000)}
+.me-card.ksa::before{background:#006C35}
+.me-card.qa::before{background:#8D1B3D}
+.me-card.kw::before{background:#007A3D}
+.me-card.bh::before{background:#CE1126}
+.me-card.om::before{background:#DB161B}
+.me-flag{font-size:2.2rem;margin-bottom:0.6rem}
+.me-name{font-family:'Libre Baskerville',serif;font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem}
+.me-cities{font-size:0.72rem;letter-spacing:0.06em;color:var(--slate)}
+.me-new{position:absolute;top:0.8rem;right:0.8rem;background:var(--gold);color:#fff;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.5rem;border-radius:2rem;font-weight:500}
+
+/* PROMISE */
+.promise{background:var(--navy);padding:6rem 3.5rem;display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:center}
+.pr-left .am-tag{color:var(--gold)}
+.pr-left .am-h2{color:#fff}
+.pr-left .am-body{color:rgba(255,255,255,0.5)}
+.pr-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.pr-pill{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:0.9rem;padding:1.5rem;transition:border-color 0.2s}
+.pr-pill:hover{border-color:rgba(255,255,255,0.25)}
+.pr-icon{font-size:1.5rem;margin-bottom:0.8rem}
+.pr-title{font-family:'Libre Baskerville',serif;font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.4rem}
+.pr-body{font-size:0.78rem;color:rgba(255,255,255,0.5);line-height:1.7}
+
+/* FOOTER */
+footer{background:#06121F;padding:3.5rem;display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:3rem}
+.f-logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.05em;color:#fff}
+.f-logo span{color:var(--red)}
+.f-sub{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:-2px;margin-bottom:1rem}
+.f-copy{font-size:0.78rem;color:rgba(255,255,255,0.3);line-height:1.7;font-weight:300}
+.f-col-h{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:500}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.f-links li a{font-size:0.82rem;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.15s}
+.f-links li a:hover{color:#fff}
+.f-bottom{background:#06121F;border-top:1px solid rgba(255,255,255,0.06);padding:1rem 3.5rem;display:flex;justify-content:space-between;align-items:center}
+.f-bc{font-size:0.74rem;color:rgba(255,255,255,0.2)}
+.f-br{font-size:0.74rem;color:var(--gold);letter-spacing:0.07em}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-l>*{animation:fadeUp 0.55s ease both}
+.origin-chip{animation-delay:0.05s}
+.hero-h1{animation-delay:0.15s}
+.hero-body{animation-delay:0.25s}
+.hero-btns{animation-delay:0.35s}
+.hero-stats{animation-delay:0.45s}
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="logo">Frisco<span>.</span></div>
+    <div class="logo-sub">An American Brand · Now in the Middle East</div>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Our Story</a></li>
+      <li><a href="#">ME Stores</a></li>
+    </ul>
+    <div class="us-flag">🇺🇸 Proudly American</div>
+    <button class="nav-cta">Shop the ME Collection</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-l">
+    <div class="origin-chip">
+      <span class="flag">🇺🇸</span>
+      <span>Born in America</span>
+      <span class="arr">→</span>
+      <span class="dest">Now in the Middle East 🌙</span>
+    </div>
+    <h1 class="hero-h1">
+      America's<br/><span class="red">Most Loved</span><br/>Pet Brand<br/><span class="accent">Goes Gulf.</span>
+    </h1>
+    <p class="hero-body">Frisco — Chewy's iconic American private label — has served <strong>millions of US pet families</strong> since 2016. Today, for the first time, we bring that same trust, quality, and unbeatable value to the Middle East.</p>
+    <div class="hero-btns">
+      <button class="btn-w">Shop Now in the ME</button>
+      <button class="btn-ghost">Find ME Stockists</button>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hs-num">10M+</div>
+        <div class="hs-lbl">US Pets Served</div>
+      </div>
+      <div>
+        <div class="hs-num">500+</div>
+        <div class="hs-lbl">Products</div>
+      </div>
+      <div>
+        <div class="hs-num">6</div>
+        <div class="hs-lbl">ME Countries</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hero-r-top">
+      <div class="journey-vis">
+        <div style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--slate);margin-bottom:1.5rem;font-weight:500">The Journey</div>
+        <div class="jv-line">
+          <div class="jv-dot us"></div>
+          <div class="jv-dot me"></div>
+          <div class="jv-label us">USA</div>
+          <div class="jv-label me">ME</div>
+          <div class="jv-plane">✈️</div>
+        </div>
+        <div style="margin-top:2.5rem;font-family:'Libre Baskerville',serif;font-size:1.1rem;font-style:italic;color:var(--navy);line-height:1.5;max-width:280px;margin-left:auto;margin-right:auto">From Chewy's American shelves to your doorstep in the Gulf.</div>
+      </div>
+    </div>
+    <div class="hero-r-cards">
+      <div class="proof-card">
+        <div class="pc-icon blue">🏆</div>
+        <div>
+          <div class="pc-title">America's #1 value pet brand</div>
+          <div class="pc-sub">Trusted by millions of US households since 2016</div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="pc-icon red">🌍</div>
+        <div>
+          <div class="pc-title">Now expanding to the Middle East</div>
+          <div class="pc-sub">UAE · Saudi Arabia · Qatar · Kuwait · Bahrain · Oman</div>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="pc-icon gold">⭐</div>
+        <div>
+          <div class="pc-title">Same American quality, here in the Gulf</div>
+          <div class="pc-sub">Zero compromises — the full Frisco promise, locally</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ti-item">Born in America</span>
+    <span class="ti-item">Trusted by 10 Million+ US Pets</span>
+    <span class="ti-item">Now in the UAE</span>
+    <span class="ti-item">Now in Saudi Arabia</span>
+    <span class="ti-item">Now in Qatar</span>
+    <span class="ti-item">Now in Kuwait</span>
+    <span class="ti-item">Now in Bahrain</span>
+    <span class="ti-item">Now in Oman</span>
+    <span class="ti-item">Born in America</span>
+    <span class="ti-item">Trusted by 10 Million+ US Pets</span>
+    <span class="ti-item">Now in the UAE</span>
+    <span class="ti-item">Now in Saudi Arabia</span>
+    <span class="ti-item">Now in Qatar</span>
+    <span class="ti-item">Now in Kuwait</span>
+    <span class="ti-item">Now in Bahrain</span>
+    <span class="ti-item">Now in Oman</span>
+  </div>
+</div>
+
+<section class="american">
+  <div>
+    <div class="am-tag">Our American Story</div>
+    <h2 class="am-h2">Made in the USA.<br/>Made for the World.</h2>
+    <p class="am-body">Frisco was created in <strong>2016 by Chewy</strong> — America's largest online pet retailer — as a private label that could deliver <strong>premium quality at honest prices</strong>. Within years, it became the most recognized pet essentials brand in the country. Now, we're ready for the world.</p>
+    <div class="am-timeline">
+      <div class="atl-item">
+        <div class="atl-dot">2016</div>
+        <div class="atl-content">
+          <div class="atl-year">Founded · Dania Beach, Florida, USA</div>
+          <div class="atl-text">Chewy launches Frisco as its flagship private-label brand. First products: collars, leashes, and beds.</div>
+        </div>
+      </div>
+      <div class="atl-item">
+        <div class="atl-dot">2020</div>
+        <div class="atl-content">
+          <div class="atl-year">National Recognition</div>
+          <div class="atl-text">Frisco reaches 300+ SKUs and becomes the top-selling pet brand on Chewy.com — beating major global names.</div>
+        </div>
+      </div>
+      <div class="atl-item">
+        <div class="atl-dot">2023</div>
+        <div class="atl-content">
+          <div class="atl-year">500+ Products, 10M+ Pets</div>
+          <div class="atl-text">Cat trees, airline carriers, crates, harnesses — Frisco now covers every stage of pet life across America.</div>
+        </div>
+      </div>
+      <div class="atl-item">
+        <div class="atl-dot gold">NOW</div>
+        <div class="atl-content">
+          <div class="atl-year">Middle East Expansion · 2025</div>
+          <div class="atl-text">For the first time, Frisco crosses the Atlantic — bringing the full American Frisco experience to Gulf pet owners.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="am-right">
+    <div class="am-big-card">
+      <div class="abc-flag">🇺🇸</div>
+      <div class="abc-label">From Chewy, America · To the Gulf</div>
+      <div class="abc-quote">"We built Frisco for the American family. Now we're bringing that same promise — quality, value, love — to the families of the Middle East."</div>
+      <div class="abc-author">— Chewy Inc., Global Expansion Team</div>
+    </div>
+    <div class="am-small-cards">
+      <div class="asc">
+        <div class="asc-num">#1</div>
+        <div class="asc-lbl">US Value Pet Brand</div>
+      </div>
+      <div class="asc">
+        <div class="asc-num">500+</div>
+        <div class="asc-lbl">Products in Range</div>
+      </div>
+      <div class="asc">
+        <div class="asc-num">10M+</div>
+        <div class="asc-lbl">Happy US Pets</div>
+      </div>
+      <div class="asc">
+        <div class="asc-num">6</div>
+        <div class="asc-lbl">ME Countries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="prod-header">
+    <div>
+      <div class="am-tag">American Range · Now Available in ME</div>
+      <h2 class="am-h2" style="font-size:2.6rem">The Full Collection</h2>
+    </div>
+    <div class="prod-tabs">
+      <button class="ptab active" onclick="switchTab(this,'travel')">Travel</button>
+      <button class="ptab" onclick="switchTab(this,'home')">Home</button>
+      <button class="ptab" onclick="switchTab(this,'cleanup')">Cleanup</button>
+    </div>
+  </div>
+  <div class="prod-grid" id="prod-grid">
+    <div class="pcard"><div class="pc-visual pc-vis-blue">🎒</div><div class="pc-info"><div class="pci-tag">Bestseller in the US</div><div class="pci-name">Airline Soft-Sided Carrier</div><div class="pci-desc">FAA-approved, mesh-vented, and feather-light. America's top-selling pet carrier — now in the Gulf.</div><div class="pci-origin">🇺🇸 American Original</div></div></div>
+    <div class="pcard"><div class="pc-visual pc-vis-cream">🥣</div><div class="pc-info"><div class="pci-tag">Travel Essential</div><div class="pci-name">Collapsible Travel Bowl</div><div class="pci-desc">Foldable, leakproof, BPA-free. Designed for the American road trip — perfect for Gulf adventures.</div><div class="pci-origin">🇺🇸 American Original</div></div></div>
+    <div class="pcard"><div class="pc-visual pc-vis-sand">🦮</div><div class="pc-info"><div class="pci-tag">Safety First</div><div class="pci-name">Reflective Step-In Harness</div><div class="pci-desc">Escape-proof, padded, reflective strips for dawn and dusk walks. A Frisco staple since day one.</div><div class="pci-origin">🇺🇸 American Original</div></div></div>
+  </div>
+</section>
+
+<section class="expansion">
+  <div class="am-tag" style="text-align:center;margin-bottom:0.6rem">Middle East Expansion</div>
+  <h2 class="exp-h2">We're All Across the Gulf Now</h2>
+  <p class="exp-body">Six markets, millions of pet lovers. Frisco has made its Middle East debut — and the region's pets couldn't be happier.</p>
+  <div class="me-grid">
+    <div class="me-card uae">
+      <div class="me-new">Live Now</div>
+      <div class="me-flag">🇦🇪</div>
+      <div class="me-name">UAE</div>
+      <div class="me-cities">Dubai · Abu Dhabi · Sharjah</div>
+    </div>
+    <div class="me-card ksa">
+      <div class="me-new">Live Now</div>
+      <div class="me-flag">🇸🇦</div>
+      <div class="me-name">Saudi Arabia</div>
+      <div class="me-cities">Riyadh · Jeddah · Dammam</div>
+    </div>
+    <div class="me-card qa">
+      <div class="me-new">Live Now</div>
+      <div class="me-flag">🇶🇦</div>
+      <div class="me-name">Qatar</div>
+      <div class="me-cities">Doha · Al Wakrah</div>
+    </div>
+  </div>
+  <div style="height:0.8rem"></div>
+  <div class="me-grid">
+    <div class="me-card kw">
+      <div class="me-new">Live Now</div>
+      <div class="me-flag">🇰🇼</div>
+      <div class="me-name">Kuwait</div>
+      <div class="me-cities">Kuwait City · Hawalli</div>
+    </div>
+    <div class="me-card bh">
+      <div class="me-new">Live Now</div>
+      <div class="me-flag">🇧🇭</div>
+      <div class="me-name">Bahrain</div>
+      <div class="me-cities">Manama · Riffa</div>
+    </div>
+    <div class="me-card om">
+      <div class="me-new">Live Now</div>
+      <div class="me-flag">🇴🇲</div>
+      <div class="me-name">Oman</div>
+      <div class="me-cities">Muscat · Sohar</div>
+    </div>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="pr-left">
+    <div class="am-tag">Why Frisco</div>
+    <h2 class="am-h2" style="color:#fff">The American<br/>Promise,<br/>Delivered Here.</h2>
+    <p class="am-body" style="color:rgba(255,255,255,0.5)">Every value that made Frisco America's most trusted pet brand — we bring all of it to you in the Middle East. No shortcuts. No exceptions.</p>
+  </div>
+  <div class="pr-pillars">
+    <div class="pr-pill">
+      <div class="pr-icon">💎</div>
+      <div class="pr-title">Premium Quality</div>
+      <div class="pr-body">The same materials, standards, and testing that American pet owners have relied on for nearly a decade.</div>
+    </div>
+    <div class="pr-pill">
+      <div class="pr-icon">💰</div>
+      <div class="pr-title">Honest Value</div>
+      <div class="pr-body">Frisco was built to be the most affordable premium pet brand in America. That commitment follows us here.</div>
+    </div>
+    <div class="pr-pill">
+      <div class="pr-icon">🌡️</div>
+      <div class="pr-title">Gulf-Ready Products</div>
+      <div class="pr-body">Our ME range is curated for the climate, lifestyle, and culture of the Gulf — not just shipped as-is.</div>
+    </div>
+    <div class="pr-pill">
+      <div class="pr-icon">❤️</div>
+      <div class="pr-title">Pet-First Always</div>
+      <div class="pr-body">Every Frisco product starts with one question: is this the best possible thing for the animal? Always yes.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="f-logo">Frisco<span>.</span></div>
+    <div class="f-sub">A Chewy Brand · Est. 2016 · USA</div>
+    <div class="f-copy">America's most trusted private-label pet brand, now proudly serving the Middle East. Collars, leashes, beds, cat trees, crates, carriers, and more.</div>
+  </div>
+  <div>
+    <div class="f-col-h">ME Regions</div>
+    <ul class="f-links">
+      <li><a href="#">UAE</a></li>
+      <li><a href="#">Saudi Arabia</a></li>
+      <li><a href="#">Qatar</a></li>
+      <li><a href="#">Kuwait</a></li>
+      <li><a href="#">Bahrain</a></li>
+      <li><a href="#">Oman</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="f-col-h">Products</div>
+    <ul class="f-links">
+      <li><a href="#">Travel & Outdoors</a></li>
+      <li><a href="#">Home & Habitat</a></li>
+      <li><a href="#">Cleanup</a></li>
+      <li><a href="#">Collars & Leashes</a></li>
+      <li><a href="#">Cat Trees & Crates</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="f-col-h">Company</div>
+    <ul class="f-links">
+      <li><a href="#">Our American Story</a></li>
+      <li><a href="#">ME Expansion</a></li>
+      <li><a href="#">Find a Stockist</a></li>
+      <li><a href="#">Press & Media</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="f-bottom">
+  <span class="f-bc">© 2025 Frisco · A Chewy Inc. Brand · All rights reserved · Dania Beach, Florida, USA</span>
+  <span class="f-br">🇺🇸 → 🌙 American quality, Gulf delivery</span>
+</div>
+
+<script>
+const products = {
+  travel:[
+    {vis:'pc-vis-blue',icon:'🎒',tag:'Bestseller in the US',name:'Airline Soft-Sided Carrier',desc:"FAA-approved, mesh-vented, and feather-light. America's top-selling pet carrier — now in the Gulf."},
+    {vis:'pc-vis-cream',icon:'🥣',tag:'Travel Essential',name:'Collapsible Travel Bowl',desc:'Foldable, leakproof, BPA-free. Designed for the American road trip — perfect for Gulf adventures.'},
+    {vis:'pc-vis-sand',icon:'🦮',tag:'Safety First',name:'Reflective Step-In Harness',desc:'Escape-proof, padded, reflective strips for dawn and dusk walks. A Frisco staple since day one.'},
+  ],
+  home:[
+    {vis:'pc-vis-blue',icon:'🚧',tag:'US Home Staple',name:'Extra-Tall Dog Gate',desc:'Adjustable, pressure-mounted, zero wall damage. Trusted in millions of American homes.'},
+    {vis:'pc-vis-cream',icon:'🏠',tag:'Space Flexible',name:'Wire Exercise Pen',desc:'Octagonal freedom — foldable, portable, adaptable. The go-to pet pen across the US for years.'},
+    {vis:'pc-vis-sand',icon:'🐈',tag:'Cat Favorite',name:'Faux-Fur Cat Tree',desc:"Multi-level, plush faux fur, sisal posts. America's best-selling cat tree, now yours in the Gulf."},
+  ],
+  cleanup:[
+    {vis:'pc-vis-blue',icon:'🪄',tag:'Zero Waste',name:'Reusable Pet Hair Roller',desc:'Adhesive-free, washable, works on every fabric. An American household essential.'},
+    {vis:'pc-vis-cream',icon:'🗑️',tag:'Eco Pack',name:'Leak-Proof Waste Bags',desc:'Extra-thick, lavender-scented, EasyTie handles. The #1 rated waste bag in the US.'},
+    {vis:'pc-vis-sand',icon:'🧴',tag:'Deep Clean',name:'Stain & Odor Eliminator',desc:'Enzyme-powered US formula that kills the source, not just the smell. Vet recommended.'},
+  ]
+};
+
+function switchTab(btn, key){
+  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('prod-grid').innerHTML = products[key].map(p => `
+    <div class="pcard">
+      <div class="pc-visual ${p.vis}">${p.icon}</div>
+      <div class="pc-info">
+        <div class="pci-tag">${p.tag}</div>
+        <div class="pci-name">${p.name}</div>
+        <div class="pci-desc">${p.desc}</div>
+        <div class="pci-origin">🇺🇸 American Original</div>
+      </div>
+    </div>
+  `).join('');
+}
+</script>
+</body>
+</html>
